@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Shopigo. All rights reserved.
+ * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="sidebar.main">
+            <block class="Shopigo\CatalogAjaxFilter\Block\Product\ProductList\AjaxFilter" name="product_list_ajax_filter" template="Shopigo_CatalogAjaxFilter::product/list/ajax_filter.phtml"/>
+        </referenceContainer>
+    </body>
+</page>
