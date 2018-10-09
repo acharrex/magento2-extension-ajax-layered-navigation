@@ -4,7 +4,7 @@
 
 This extension enhances the default layered navigation with fast AJAX approach.
 
-When a filter is selected from the layered navigation block, the page is automatically reloaded in AJAX, making the browsing more comfortable for the user and performing a significant speed increase.
+When a filter is selected from the layered navigation block, the page is automatically reloaded with AJAX, making the browsing more comfortable for the user and performing a significant speed increase.
 
 ## Requirements
 
