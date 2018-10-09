@@ -52,7 +52,7 @@ php bin/magento setup:static-content:deploy
 
 ### Step 2 - Products are loaded with AJAX
 
-![Step 2 - Products are loaded in AJAX](https://www.shopigo.ch/wp-content/uploads/2018/10/github-extension-ajax-layered-navigation-plp-loading.jpg)
+![Step 2 - Products are loaded with AJAX](https://www.shopigo.ch/wp-content/uploads/2018/10/github-extension-ajax-layered-navigation-plp-loading.jpg)
 
 ### Step 3 - Results are shown without reloading the page
 
