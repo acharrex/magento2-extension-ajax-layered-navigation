@@ -2,11 +2,9 @@
 
 # Magento 2 AJAX Layered Navigation extension by [Shopigo](https://www.shopigo.ch)
 
-DESCRIPTION
+This extension enhances the default layered navigation with fast AJAX approach.
 
-BLOG LINK
-
-SCREENSHOT
+When a filter is selected from the layered navigation block, the page is automatically reloaded in AJAX, making the browsing more comfortable for the user and performing a significant speed increase.
 
 ## Requirements
 
@@ -17,7 +15,7 @@ Magento Open Source Edition 2.2.x.
 ## Method 1 - Installing via composer
 
 - Switch to your Magento project root
-- Run `composer require shopigo/magento2-extension-ajax-layered-navigation=dev-master`
+- Run `composer require shopigo/magento2-extension-ajax-layered-navigation`
 
 ## Method 2 - Installing using archive
 
@@ -39,7 +37,32 @@ php bin/magento setup:static-content:deploy
 
 ## How to use it
 
-TODO
+- Log into your Magento back-office
+- Go to the menu "Stores > Configuration > Shopigo Extensions > AJAX Layered Navigation"
+- Set the parameter "Use AJAX to Apply Filters" to "Yes"
+- Flush Magento caches from the menu "System > Tools > Cache Management"
+
+## Screenshots
+
+### Step 1 - Select a filter
+
+![Step 1 - Select a filter](https://www.shopigo.ch/wp-content/uploads/2018/10/github-extension-ajax-layered-navigation-plp-filter.jpg)
+
+### Step 2 - Products are loaded with AJAX
+
+![Step 2 - Products are loaded in AJAX](https://www.shopigo.ch/wp-content/uploads/2018/10/github-extension-ajax-layered-navigation-plp-loading.jpg)
+
+### Step 3 - Results are shown without reloading the page
+
+![Step 3 - Results are shown without reloading the page](https://www.shopigo.ch/wp-content/uploads/2018/10/github-extension-ajax-layered-navigation-plp-loaded.jpg)
+
+### When an error occurs with the AJAX request
+
+![When an error occurs with the AJAX request](https://www.shopigo.ch/wp-content/uploads/2018/10/github-extension-ajax-layered-navigation-plp-loading-error.jpg)
+
+### Extension settings
+
+![Extension settings](https://www.shopigo.ch/wp-content/uploads/2018/10/github-extension-ajax-layered-navigation-settings.jpg)
 
 ## Support
 
@@ -49,9 +72,14 @@ If you have any issues, open a bug report in GitHub's [issue tracker](https://gi
 
 Please contact us to get a quote https://www.shopigo.ch/contact
 
+## Change logs
+
+**Version 1.0.0** (2018-10-09)
+- First version
+
 ## License
 
 The code is licensed under [Open Software License ("OSL") v. 3.0](http://opensource.org/licenses/osl-3.0.php).
 
-Enjoy!<br/>
+<br/>Enjoy!<br/>
 [Shopigo](https://www.shopigo.ch)
