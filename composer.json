@@ -1,6 +1,6 @@
 {
   "name": "shopigo/magento2-extension-ajax-layered-navigation",
-  "description": "AJAX Layered Navigation extension for Magento 2",
+  "description": "Magento 2 AJAX Layered Navigation extension by Shopigo",
   "require": {
     "php": "7.0.2|7.0.4|~7.0.6|~7.1.0",
     "magento/module-catalog": "102.0.*",
