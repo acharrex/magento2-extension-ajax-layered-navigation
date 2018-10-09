@@ -19,6 +19,8 @@ Magento Open Source Edition 2.2.x.
 
 ## Method 2 - Installing using archive
 
+**Important**: this extension requires the [AJAX Listing extension by Shopigo](https://github.com/shopigo/magento2-extension-ajax-listing) (to install and enable)
+
 - Download [ZIP Archive](https://github.com/shopigo/magento2-extension-ajax-layered-navigation/archive/master.zip)
 - Switch to your Magento project root
 - Create folder `app/code/Shopigo/CatalogAjaxFilter`
