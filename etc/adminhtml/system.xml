@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Shopigo. All rights reserved.
+ * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="shopigo" translate="label" sortOrder="500" class="shopigo-extensions">
+            <label>Shopigo Extensions</label>
+        </tab>
+        <section id="shopigo_catalogajaxfilter" translate="label" type="text" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>AJAX Layered Navigation</label>
+            <tab>shopigo</tab>
+            <resource>Shopigo_CatalogAjaxFilter::config</resource>
+            <group id="general" translate="label" type="select" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General Settings</label>
+                <field id="enabled" translate="label comment" type="select" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Use AJAX to Apply Filters</label>
+                    <comment>Loading product listings with AJAX when a filter is selected or removed</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="ajax_request_timeout" translate="label comment" type="text" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>AJAX Request Timeout</label>
+                    <comment>In milliseconds, by default 10000 (= 10 seconds)</comment>
+                </field>
+                <field id="scroll_to_top_enabled" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Enable Scroll-to-top</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Scroll to the top of the page when the AJAX request is completed</comment>
+                </field>
+                <field id="scroll_to_top_easing" translate="label tooltip comment" type="select" sortOrder="15" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Scroll-to-top Easing</label>
+                    <source_model>Shopigo\CatalogAjaxFilter\Model\Config\Source\Easing</source_model>
+                    <tooltip>Animation used for the scroll-to-top</tooltip>
+                    <comment><![CDATA[For more information about jQuery easings, go to the <a href="https://api.jqueryui.com/easings/" target="_blank">official jQuery UI documentation</a>]]></comment>
+                    <depends>
+                        <field id="scroll_to_top_enabled">1</field>
+                    </depends>
+                </field>
+                <field id="scroll_to_top_duration" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Scroll-to-top Easing Duration</label>
+                    <comment>In milliseconds, by default 1200 (= 1.2 second)</comment>
+                    <depends>
+                        <field id="scroll_to_top_enabled">1</field>
+                    </depends>
+                </field>
+                <field id="scroll_to_top_offset" translate="label tooltip comment" type="text" sortOrder="25" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Scroll-to-top Offset</label>
+                    <tooltip>Offset relative to the products wrapper</tooltip>
+                    <comment>In pixels, by default 20</comment>
+                    <depends>
+                        <field id="scroll_to_top_enabled">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
