@@ -23,7 +23,7 @@ define([
          */
         options:
         {
-            links: 'a:not([data-ajax=false])', // all links except those configured
+            links: 'a:not([data-ajax=false])[href]', // all links except those configured
                                                // with a 'data-ajax="false"' attribute
             contentContainer: '.column.main',
             sidebarMainContainer: '.sidebar-main',
@@ -40,7 +40,7 @@ define([
          * @return void
          */
         _create: function () {
-            this._bind($(this.element).find(this.options.links));
+            this._bind($(this.element));
         },
 
         /**
@@ -50,9 +50,7 @@ define([
          * @return void
          */
         _bind: function (element) {
-            if (element.is('a')) {
-                element.on('click', $.proxy(this.processLink, this));
-            }
+            element.on('click', $.proxy(this.processLink, this));
         },
 
         /**
@@ -62,10 +60,12 @@ define([
          * @return void
          */
         processLink: function (event) {
-            event.preventDefault();            
-            this.ajaxSubmit($(event.currentTarget).attr('href'));
+            if ($(event.target).closest('a').is(this.options.links)) {
+                event.preventDefault();
+                this.ajaxSubmit($(event.target).closest('a').attr('href'));
+            }
         },
-        
+
         /**
          * Update content and init all components defined via the data-mage-init
          * attribute
@@ -74,24 +74,28 @@ define([
          * @return void
          */
         updateContent: function (html) {
-            if (html.content) {           
+            if (html.content) {
                 // Remove all products wrappers except the first one
                 $(this.options.contentContainer).slice(1).remove();
-            
+
                 // Update content
                 $(this.options.contentContainer)
                     .html(html.content)
-                    .trigger('contentUpdated');
+                    .trigger('contentUpdated')
+                    .children()
+                    .applyBindings();
             }
-            
+
             if (html.sidebar_main) {
                 $(this.options.sidebarMainContainer)
                     .empty()
                     .html(html.sidebar_main)
-                    .trigger('contentUpdated');
+                    .trigger('contentUpdated')
+                    .children()
+                    .applyBindings();
             }
         },
-        
+
         /**
          * Replace the browser URL
          *
@@ -107,7 +111,7 @@ define([
                 history.replaceState(null, null, url);
             }
         },
-        
+
         /**
          * Scroll to the top of the content container and update content
          *
@@ -137,7 +141,7 @@ define([
          */
         ajaxSubmit: function (url) {
             var self = this;
-            
+
             $.ajax({
                 url: url,
                 data: 'ajax=1',
