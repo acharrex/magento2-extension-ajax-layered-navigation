@@ -81,14 +81,18 @@ define([
                 // Update content
                 $(this.options.contentContainer)
                     .html(html.content)
-                    .trigger('contentUpdated');
+                    .trigger('contentUpdated')
+                    .children()
+                    .applyBindings();
             }
 
             if (html.sidebar_main) {
                 $(this.options.sidebarMainContainer)
                     .empty()
                     .html(html.sidebar_main)
-                    .trigger('contentUpdated');
+                    .trigger('contentUpdated')
+                    .children()
+                    .applyBindings();
             }
         },
 
